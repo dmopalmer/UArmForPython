@@ -15,7 +15,7 @@ In uarm, install [FIRMATA-EEPROM-StandardFirmataEEPROM.ino	](https://github.com/
 ### 0. Class name
 
 > Uarm()
-> 
+ 
 Exameples:
 ```
 uarm = Uarm('/dev/ttyUSB0')
@@ -75,10 +75,12 @@ print uarm.readAngle(1)
 ### 6. All moveTo s	
 >moveTo(x,y,z)
 >
+
 **add time parameter**
 
 >moveToWithTime(x,y,z,timeSpend)
 >
+
 **control servo_4 and time at the same time. servo_4_relative should be 1 or 0**
 
 >moveToWithS4(x,y,z,timeSpend,servo_4_relative,servo_4)
