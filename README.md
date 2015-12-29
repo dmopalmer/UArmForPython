@@ -5,9 +5,12 @@ uArm python library designed by Yichen Pan and Joey Song
 
 ## INSTALLATION
 
-Install this library along with pyfirmata-uarm-version
+Install this library along with [pyfirmata-uarm](https://github.com/uArm-Developer/pyFirmata). Install this library before you use UArm For Python
 
 In uarm, install [FIRMATA-EEPROM-StandardFirmataEEPROM.ino	](https://github.com/uArm-Developer/FirmataEEPROM/) after you calibrate uarm - Check here to see [How to calibrate](http://developer.ufactory.cc/quickstart/)
+
+Then install/copy UArmForPython in the directory as the same as pyfirmata.
+
 
 
 ## API REFERENCE
