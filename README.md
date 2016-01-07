@@ -1,5 +1,5 @@
 # UArmForPython
-uArm python library designed by Yichen Pan and Joey Song
+uArm python library designed by Joey Song ( joey@ufactory.cc / astainsong@gmail.com)
 
 
 
