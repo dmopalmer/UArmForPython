@@ -30,6 +30,7 @@ class Uarm(object):
 	kAddrAandB = 60
 
 	uarm_status = 0
+	pin2_status = 0
 	coord = {}
 	g_interpol_val_arr = {}
 	angle = {}
@@ -192,6 +193,7 @@ class Uarm(object):
 		else:
 			pass
 	
+
 	def readToAngle(self,input_analog,servo_number,tirgger):
 		addr = self.kAddrAandB + (servo_number-1)*6
 
@@ -451,9 +453,7 @@ class Uarm(object):
 		for n in range(0,50):
 			self.ivsKine(x_arr[n],y_arr[n],z_arr[n])
 			self.writeAngle(self.angle[1],self.angle[2],self.angle[3],0)
-			print 'Angle outputs %f %f %f' %(self.angle[1],self.angle[2],self.angle[3])
-			print 'Read angles %f %f %f' %(self.readAngle(1),self.readAngle(2),self.readAngle(3))
-			
+		
 			time.sleep(0.04)
 
 
@@ -464,7 +464,6 @@ class Uarm(object):
 			self.uarm_status = 1
 
 		curXYZ = self.currentCoord()
-
 		x_arr = {}
 		y_arr = {}
 		z_arr = {}
@@ -488,31 +487,37 @@ class Uarm(object):
 				time.sleep(timeSpend/50.0)
 
 		elif time == 0:
+			
 			self.ivsKine(x,y,z)
 			self.writeAngle(self.angle[1],self.angle[2],self.angle[3],0)
 
 		else:
 			pass
+
+	def moveToAtOnce(self,x,y,z):
+		
+		if self.uarm_status == 0:
+			self.uarmAttach()
+			self.uarm_status = 1
+
+		self.ivsKine(x,y,z)
+		self.writeAngle(self.angle[1],self.angle[2],self.angle[3],0)
+
 	
 	def moveRelative(self,x,y,z,time,servo_4_relative,servo_4):
 		pass
 		
 
 	def stopperStatus(self):
-		if (self.pin2_status == 0):
-			self.stopper = self.uarm.get_pin('d:2:i')
-			self.pin2_status == 1
-			
-		it = util.Iterator(self.uarm)
-		it.start()
+		val = self.uarm.pumpStatus(0)
+		
+		if val ==2 or val ==1:
+			return val-1
+		else:
+			print 'ERROR: Stopper is not deteceted'
+			return -1
+		
 
-		val = self.stopper.read()
-		while val != False and val != True:
-			val = self.stopper.read()
-			time.sleep(0.01)
-	
-		return val
-	
 
 
 
