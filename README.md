@@ -11,6 +11,9 @@ In uarm, install [FIRMATA-EEPROM-StandardFirmataEEPROM.ino	](https://github.com/
 
 Then cd to UArmForPython path in the directory and use **python setup.py install** to install UArmForPython library.
 
+Remember to import the library that:
+
+**from UArmForPython.uarm_python import Uarm**
 
 
 ## API REFERENCE
