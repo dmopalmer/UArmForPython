@@ -13,13 +13,13 @@ Then cd to UArmForPython path in the directory and use **python setup.py install
 
 Remember to import/include the library that:
 
-**from UArmForPython.uarm_python import Uarm**
+`from UArmForPython.uarm_python import Uarm`
 
 
 ## API REFERENCE
 
 Remember to import/include the library that:
-**from UArmForPython.uarm_python import Uarm**
+`from UArmForPython.uarm_python import Uarm`
 
 ### 0. Class name
 
