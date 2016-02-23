@@ -9,11 +9,14 @@ Install this library along with [pyfirmata-uarm](https://github.com/uArm-Develop
 
 In uarm, install [FIRMATA-EEPROM-StandardFirmataEEPROM.ino	](https://github.com/uArm-Developer/FirmataEEPROM/) after you calibrate uarm - Check here to see [How to calibrate](http://developer.ufactory.cc/quickstart/)
 
-Then install/copy UArmForPython in the directory as the same as pyfirmata.
+Then cd to UArmForPython path in the directory and use **python setup.py install** to install UArmForPython library.
 
 
 
 ## API REFERENCE
+
+Remember to import the library that:
+**from UArmForPython.uarm_python import Uarm**
 
 ### 0. Class name
 
